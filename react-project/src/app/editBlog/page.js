@@ -1,0 +1,8 @@
+'use client'
+export default function Blog(){
+    return(
+        <div>
+            developing...
+        </div>
+    )
+}
