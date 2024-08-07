@@ -16,6 +16,7 @@ export default function Home () {
                     </Card>
                 </Link>
             );
+            
             setBlogsDom(tempBlogsDom);
         }
     }, [blogs]); // 依赖数组中包含 blogs，确保在 blogs 更新后运行
