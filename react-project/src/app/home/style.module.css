@@ -1,0 +1,12 @@
+.card {
+
+}
+.card:hover{
+    background-color: rgb(250, 250, 250);
+}
+.div {
+	display: flex;
+}
+.myP{
+    color: red;
+}

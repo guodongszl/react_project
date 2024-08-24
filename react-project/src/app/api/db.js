@@ -8,7 +8,7 @@ const pool = mysql.createPool({
   password: 'root',
   database: 'react_project',
   waitForConnections: true,
-  connectionLimit: 10,
+  connectionLimit: 1,
   queueLimit: 0
 });
 

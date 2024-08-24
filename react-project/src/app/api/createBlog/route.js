@@ -1,16 +1,15 @@
-// app/api/blog/route.js
+
 import pool from '../db.js'; // 引入数据库连接模块
 
-export async function GET (request) {
-
-    const { searchParams } = new URL(request.url);
-    const tags = searchParams.get("tags");
+export async function POST (request, response) {
+    const body = await request.json()
     try {
+        const { title, content, author, author_id, tags, build_type } = body;
         // 编写 SQL 查询语句
-        const sql = 'SELECT *, (SELECT COUNT(*) FROM comments WHERE comments.blog_id = blog.id) AS comment_count FROM blog where tags=?';
+        const sql = 'INSERT INTO blog(title,content,author,author_id,tags,build_type,read_count ) VALUES( ?, ?, ?, ?, ?, ?,0)'
 
         // 执行查询并获取结果
-        const [results] = await pool.query(sql, [tags]);
+        const results = await pool.query(sql, [title, content, author, author_id, tags, build_type]);
 
         // 返回 JSON 响应
         return new Response(JSON.stringify(results), {
@@ -24,4 +23,7 @@ export async function GET (request) {
             status: 500
         });
     }
+
+
+
 }
