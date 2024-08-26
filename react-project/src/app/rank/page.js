@@ -24,7 +24,7 @@ const Rank = () => {
 			var dom = data.map((user) => {
 				console.log();
 
-				return <PersonalInfoCard author_id={user.id} />;
+				return <PersonalInfoCard author_id={user.id} key={user.id}/>;
 			});
 			setDataDom(dom);
 		}

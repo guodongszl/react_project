@@ -52,7 +52,7 @@ export default function Page({ params }) {
 	return (
 		<div>
 			<PersonalInfoCard author_id={blog.author_id} />
-			<Card title={blog.title} style={{ height: '1000px' }}>
+			<Card title={blog.title}>
 				{blog.build_type == 'RT' ? (
 					<ReactQuill
 						theme="snow"

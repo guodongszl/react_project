@@ -15,6 +15,7 @@ import { useGlobalContext } from '@/context/GlobalContext';
 import { useRouter } from 'next/navigation';
 import BlogPostViewer from './BlogPostViewer';
 import { marked } from 'marked';
+import ReactDOMServer from 'react-dom/server';
 const { Header, Footer, Sider, Content } = Layout;
 
 export default function Home({ tags, author_id }) {
@@ -40,53 +41,87 @@ export default function Home({ tags, author_id }) {
 
 	useEffect(() => {
 		if (blogs.length > 0) {
-			const tempBlogsDom = blogs.map((blog) => (
-				<Link style={{ textDecoration: 'none' }} href={`/blog/${blog.id}`} key={blog.id}>
-					<div style={{ color: 'black' }}>
-						<h2>{blog.title}</h2>
-						<p
-							style={{
-								overflow: 'hidden', // 内容超出元素盒子时隐藏
-								textOverflow: 'ellipsis', // 显示省略号
-								whiteSpace: 'nowrap', // 不换行
-								width: '100%', // 宽度设为100%或根据需要设置
-							}}
-						>
-							{extractTextSummary(marked(blog.content))}
-						</p>
-						<Space size={'middle'}>
-							<span>
-								<Link href={`/personalHomePage/${blog.author_id}`}>
-									<UserOutlined style={{ marginRight: 5 }} />
-									作者：{blog.author}
-								</Link>
-							</span>
-							<span>
-								<MessageOutlined style={{ marginRight: 5 }} />
-								评论数：{blog.comment_count}
-							</span>
-							<span>
-								<EyeOutlined style={{ marginRight: 5 }} />
-								阅读量：{blog.read_count}
-							</span>
-							<Tag>{blog.tags}</Tag>
-							<span>
-								{blog.author == globalState.username ? (
-									<Dropdown menu={{ items: menu(blog) }} trigger={['hover']}>
-										<Button
-											type="text"
-											icon={<EllipsisOutlined />}
-											onClick={(e) => e.preventDefault()}
-										/>
-									</Dropdown>
-								) : (
-									<></>
-								)}
-							</span>
-						</Space>
-					</div>
-				</Link>
-			));
+			const tempBlogsDom = blogs.map((blog) => {
+				// 解析 HTML 字符串为 DOM
+				var parser = new DOMParser();
+				var doc = parser.parseFromString(blog.content, 'text/html');
+
+				// 使用 querySelector 获取第一个 <img> 元素
+				var firstImage = doc.querySelector('img');
+				if (firstImage) {
+					firstImage.style.height = '100%';
+					firstImage.style.width = '100%';
+					firstImage.style.objectFit = 'cover';
+				}
+
+				return (
+					<Layout key={blog.id}>
+						<Content style={{ backgroundColor: 'white' }}>
+							<Link
+								style={{ textDecoration: 'none' }}
+								href={`/blog/${blog.id}`}
+								key={blog.id}
+							>
+								<div style={{ color: 'black' }}>
+									<h2>{blog.title}</h2>
+									<p
+										style={{
+											overflow: 'hidden', // 内容超出元素盒子时隐藏
+											textOverflow: 'ellipsis', // 显示省略号
+											whiteSpace: 'nowrap', // 不换行
+											width: '100%', // 宽度设为100%或根据需要设置
+										}}
+									>
+										{extractTextSummary(marked(blog.content))}
+									</p>
+									<Space size={'middle'}>
+										<span>
+											<Link href={`/personalHomePage/${blog.author_id}`}>
+												<UserOutlined style={{ marginRight: 5 }} />
+												作者：{blog.author}
+											</Link>
+										</span>
+										<span>
+											<MessageOutlined style={{ marginRight: 5 }} />
+											评论数：{blog.comment_count}
+										</span>
+										<span>
+											<EyeOutlined style={{ marginRight: 5 }} />
+											阅读量：{blog.read_count}
+										</span>
+										{blog.tags?.map((tag) => {
+											return <Tag key={tag}>{tag}</Tag>;
+										})}
+										{/* <Tag>{blog.tags}</Tag> */}
+										<span>
+											{blog.author == globalState.username ? (
+												<Dropdown
+													menu={{ items: menu(blog) }}
+													trigger={['hover']}
+												>
+													<Button
+														type="text"
+														icon={<EllipsisOutlined />}
+														onClick={(e) => e.preventDefault()}
+													/>
+												</Dropdown>
+											) : (
+												<></>
+											)}
+										</span>
+									</Space>
+								</div>
+							</Link>
+						</Content>
+						<Sider style={{ backgroundColor: 'white' }}>
+							<div
+								style={{ float: 'right', height: '135px' }}
+								dangerouslySetInnerHTML={{ __html: firstImage?.outerHTML }}
+							/>
+						</Sider>
+					</Layout>
+				);
+			});
 			setBlogsDom(tempBlogsDom);
 		}
 	}, [blogs]); // 依赖数组中包含 blogs，确保在 blogs 更新后运行

@@ -1,0 +1,146 @@
+ Generating static pages (0/23)  [    ]Database error: q [Error]: Dynamic server usage: Route /api/user couldn't be rendered statically because it accessed `request.url`. See more info here: https://nextjs.org/docs/messages/dynamic-server-error
+    at Object.get (D:\MyWorkspace\react_project\react-project\node_modules\next\dist\compiled\next-server\app-route.runtime.prod.js:6:37835)
+    at a (D:\MyWorkspace\react_project\react-project\.next\server\app\api\user\route.js:1:1339)
+    at D:\MyWorkspace\react_project\react-project\node_modules\next\dist\compiled\next-server\app-route.runtime.prod.js:6:34672
+    at D:\MyWorkspace\react_project\react-project\node_modules\next\dist\server\lib\trace\tracer.js:140:36
+    at NoopContextManager.with (D:\MyWorkspace\react_project\react-project\node_modules\next\dist\compiled\@opentelemetry\api\index.js:1:7062)
+    at ContextAPI.with (D:\MyWorkspace\react_project\react-project\node_modules\next\dist\compiled\@opentelemetry\api\index.js:1:518)
+    at NoopTracer.startActiveSpan (D:\MyWorkspace\react_project\react-project\node_modules\next\dist\compiled\@opentelemetry\api\index.js:1:18093)
+    at ProxyTracer.startActiveSpan (D:\MyWorkspace\react_project\react-project\node_modules\next\dist\compiled\@opentelemetry\api\index.js:1:18854)
+    at D:\MyWorkspace\react_project\react-project\node_modules\next\dist\server\lib\trace\tracer.js:122:103
+    at NoopContextManager.with (D:\MyWorkspace\react_project\react-project\node_modules\next\dist\compiled\@opentelemetry\api\index.js:1:7062) {
+  description: "Route /api/user couldn't be rendered statically because it accessed `request.url`. See more info here: https://nextjs.org/docs/messages/dynamic-server-error",
+  digest: 'DYNAMIC_SERVER_USAGE'
+}
+   Generating static pages (11/23)  [=   ]ReferenceError: document is not defined
+    at Object.<anonymous> (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:155707)
+    at n (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:22380)
+    at Object.<anonymous> (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:38256)
+    at n (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:22380)
+    at Object.<anonymous> (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:121178)
+    at n (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:22380)
+    at Object.<anonymous> (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:192095)
+    at n (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:22380)
+    at Object.<anonymous> (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:235283)
+    at n (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:22380) {
+  digest: '131169423'
+}
+
+Error occurred prerendering page "/home". Read more: https://nextjs.org/docs/messages/prerender-error
+
+ReferenceError: document is not defined
+    at Object.<anonymous> (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:155707)
+    at n (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:22380)
+    at Object.<anonymous> (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:38256)
+    at n (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:22380)
+    at Object.<anonymous> (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:121178)
+    at n (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:22380)
+    at Object.<anonymous> (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:192095)
+    at n (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:22380)
+    at Object.<anonymous> (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:235283)
+    at n (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:22380)
+ ⨯ useSearchParams() should be wrapped in a suspense boundary at page "/follower". Read more: https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout
+    at i (D:\MyWorkspace\react_project\react-project\.next\server\chunks\708.js:85:33120)
+    at s (D:\MyWorkspace\react_project\react-project\.next\server\chunks\708.js:85:44117)
+    at i (D:\MyWorkspace\react_project\react-project\.next\server\app\follower\page.js:1:2860)
+    at nj (D:\MyWorkspace\react_project\react-project\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:46251)
+    at nM (D:\MyWorkspace\react_project\react-project\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:47571)
+    at nN (D:\MyWorkspace\react_project\react-project\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:64546)
+    at nI (D:\MyWorkspace\react_project\react-project\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:47010)
+    at nM (D:\MyWorkspace\react_project\react-project\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:47717)
+    at nM (D:\MyWorkspace\react_project\react-project\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:61546)
+    at nN (D:\MyWorkspace\react_project\react-project\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:64546)
+
+Error occurred prerendering page "/follower". Read more: https://nextjs.org/docs/messages/prerender-error
+
+ ⨯ useSearchParams() should be wrapped in a suspense boundary at page "/followee". Read more: https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout
+    at i (D:\MyWorkspace\react_project\react-project\.next\server\chunks\708.js:85:33120)
+    at s (D:\MyWorkspace\react_project\react-project\.next\server\chunks\708.js:85:44117)
+    at i (D:\MyWorkspace\react_project\react-project\.next\server\app\followee\page.js:1:2861)
+    at nj (D:\MyWorkspace\react_project\react-project\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:46251)
+    at nM (D:\MyWorkspace\react_project\react-project\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:47571)
+    at nN (D:\MyWorkspace\react_project\react-project\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:64546)
+    at nI (D:\MyWorkspace\react_project\react-project\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:47010)
+    at nM (D:\MyWorkspace\react_project\react-project\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:47717)
+    at nM (D:\MyWorkspace\react_project\react-project\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:61546)
+    at nN (D:\MyWorkspace\react_project\react-project\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:64546)
+
+Error occurred prerendering page "/followee". Read more: https://nextjs.org/docs/messages/prerender-error
+
+ReferenceError: document is not defined
+    at Object.<anonymous> (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:155707)
+    at n (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:22380)
+    at Object.<anonymous> (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:38256)
+    at n (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:22380)
+    at Object.<anonymous> (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:121178)
+    at n (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:22380)
+    at Object.<anonymous> (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:192095)
+    at n (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:22380)
+    at Object.<anonymous> (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:235283)
+    at n (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:22380) {
+  digest: '131169423'
+}
+
+Error occurred prerendering page "/richTextEditor". Read more: https://nextjs.org/docs/messages/prerender-error
+
+ReferenceError: document is not defined
+    at Object.<anonymous> (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:155707)
+    at n (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:22380)
+    at Object.<anonymous> (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:38256)
+    at n (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:22380)
+    at Object.<anonymous> (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:121178)
+    at n (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:22380)
+    at Object.<anonymous> (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:192095)
+    at n (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:22380)
+    at Object.<anonymous> (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:235283)
+    at n (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:22380)
+ ⨯ useSearchParams() should be wrapped in a suspense boundary at page "/markdownEditor". Read more: https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout
+    at i (D:\MyWorkspace\react_project\react-project\.next\server\chunks\708.js:85:33120)
+    at s (D:\MyWorkspace\react_project\react-project\.next\server\chunks\708.js:85:44117)
+    at g (D:\MyWorkspace\react_project\react-project\.next\server\app\markdownEditor\page.js:1:5280)
+    at nj (D:\MyWorkspace\react_project\react-project\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:46251)
+    at nM (D:\MyWorkspace\react_project\react-project\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:47571)
+    at nN (D:\MyWorkspace\react_project\react-project\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:64546)
+    at nI (D:\MyWorkspace\react_project\react-project\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:47010)
+    at nM (D:\MyWorkspace\react_project\react-project\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:47717)
+    at nM (D:\MyWorkspace\react_project\react-project\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:61546)
+    at nN (D:\MyWorkspace\react_project\react-project\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:64546)
+
+Error occurred prerendering page "/markdownEditor". Read more: https://nextjs.org/docs/messages/prerender-error
+
+ReferenceError: document is not defined
+    at Object.<anonymous> (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:155707)
+    at n (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:22380)
+    at Object.<anonymous> (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:38256)
+    at n (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:22380)
+    at Object.<anonymous> (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:121178)
+    at n (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:22380)
+    at Object.<anonymous> (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:192095)
+    at n (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:22380)
+    at Object.<anonymous> (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:235283)
+    at n (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:22380) {
+  digest: '131169423'
+}
+
+Error occurred prerendering page "/editBlog". Read more: https://nextjs.org/docs/messages/prerender-error
+
+ReferenceError: document is not defined
+    at Object.<anonymous> (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:155707)
+    at n (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:22380)
+    at Object.<anonymous> (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:38256)
+    at n (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:22380)
+    at Object.<anonymous> (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:121178)
+    at n (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:22380)
+    at Object.<anonymous> (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:192095)
+    at n (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:22380)
+    at Object.<anonymous> (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:235283)
+    at n (D:\MyWorkspace\react_project\react-project\.next\server\chunks\702.js:1:22380)
+ ✓ Generating static pages (23/23)
+
+> Export encountered errors on following paths:
+        /editBlog/page: /editBlog
+        /followee/page: /followee
+        /follower/page: /follower
+        /home/page: /home
+        /markdownEditor/page: /markdownEditor
+        /richTextEditor/page: /richTextEditor
